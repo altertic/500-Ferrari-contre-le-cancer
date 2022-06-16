@@ -26,7 +26,6 @@ let cmsApi: {
   getAllSpeakers: () => Promise<Speaker[]>;
   getAllStages: () => Promise<Stage[]>;
   getAllSponsors: () => Promise<Sponsor[]>;
-  getAllJobs: () => Promise<Job[]>;
 };
 
 if (process.env.DATOCMS_READ_ONLY_API_TOKEN) {
@@ -49,8 +48,7 @@ if (process.env.DATOCMS_READ_ONLY_API_TOKEN) {
   cmsApi = {
     getAllSpeakers: async () => [],
     getAllStages: async () => [],
-    getAllSponsors: async () => [],
-    getAllJobs: async () => []
+    getAllSponsors: async () => []
   };
 }
 
@@ -64,8 +62,4 @@ export async function getAllStages(): Promise<Stage[]> {
 
 export async function getAllSponsors(): Promise<Sponsor[]> {
   return cmsApi.getAllSponsors();
-}
-
-export async function getAllJobs(): Promise<Job[]> {
-  return cmsApi.getAllJobs();
 }
